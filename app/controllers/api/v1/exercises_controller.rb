@@ -5,7 +5,13 @@ class Api::V1::ExercisesController < ApplicationController
   end
 
   def create
-    # respond_with 'whyisthissohard'
-    render json: @note
+    @exercise = Exercise.create(exercise_params)
+    render json: @exercise
+  end
+
+  private
+
+  def exercise_params
+    params.permit(:name, :exercise_type)
   end
 end
