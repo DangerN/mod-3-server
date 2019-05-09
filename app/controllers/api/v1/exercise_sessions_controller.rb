@@ -4,6 +4,11 @@ class Api::V1::ExerciseSessionsController < ApplicationController
     render json: @exercise
   end
 
+  def show
+    @exercise_session = ExerciseSession.find(params[:id])
+    render json: @exercise_session
+  end
+
   def create
     @exercise_session = ExerciseSession.new(exercise_session_params)
 
@@ -12,6 +17,12 @@ class Api::V1::ExerciseSessionsController < ApplicationController
     else
       render json: { errors: @exercise_session.errors.full_messages }, status: :unprocessible_entity
     end
+  end
+
+  def destroy
+    @exercise_session = ExerciseSession.find(params[:id])
+    @exercise_session.destroy
+    # byebug
   end
 
   private
