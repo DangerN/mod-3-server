@@ -19,4 +19,8 @@ This is the back-end for Fitness Tracker
 * `User.create(name: "example", email: "example@ex.com")`
 * `ctrl-d`
 * `rails s`
-#### Your up and running!
+#### You're up and running!
+
+# Attention
+A new back-end is being developed for the latest iteration of this app.
+You may view it [here](https://github.com/dangern/fitnessTracker-backend).
